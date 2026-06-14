@@ -14,7 +14,7 @@
 - 本地路径：`D:\_Code\Java\xueyifang-frontend-cloud`
 - 后端 Gateway：`http://43.213.28.91:18080`
 - 生产域名：`https://xueyifang.luoyiy.eu.cc/`
-- 当前状态：已从旧前端参考目录复制出独立前端仓库；已在本地适配新后端登录/注册字段、当前用户响应、Vite 代理和 WebSocket 同源路径；已升级 `vue-tsc` 并修复旧类型问题，`npm run build` 已通过。
+- 当前状态：已从旧前端参考目录复制出独立前端仓库；已在本地适配新后端登录/注册字段、当前用户响应、Vite 代理和 WebSocket 同源路径；已升级 `vue-tsc` 并修复旧类型问题，`npm run build` 已通过；已推送 GitHub 并由服务器从 GitHub 拉取构建部署；生产域名注册、登录、刷新恢复当前用户浏览器冒烟通过。
 
 ## 根目录索引
 
@@ -47,16 +47,16 @@
 | `src/views/auth/Register.vue` | 用户注册页。 |
 | `src/views/admin/login/AdminLogin.vue` | 管理员登录页。 |
 
-## 部署约定
+## 部署状态与约定
 
-- GitHub 仓库名计划为 `2832599985/xueyifang-frontend-cloud`。
+- GitHub 仓库：`https://github.com/2832599985/xueyifang-frontend-cloud`
+- 当前已部署提交：`1d253f2 feat: adapt frontend for cloud backend`
+- 2026-06-14 17:57 生产冒烟：`/api/sys-config/register-status` 返回 `registerEnabled=true`；新测试用户注册返回 200 并跳转登录页；登录返回 200、跳转首页、`localStorage.token` 写入成功；Playwright 未发现浏览器 console error。
+- 2026-06-14 17:59 登录态恢复冒烟：带 token 刷新首页后 `/api/auth/currentUser` 返回 200；通知未读数、聊天会话、首页服务列表请求均返回 200；Playwright 未发现浏览器 console error。
 - 服务器应从 GitHub 拉取代码后执行 `npm ci && npm run build`。
 - 构建产物同步到 `/var/www/xueyifang.luoyiy.eu.cc`。
 - Nginx 同源 `/api/**` 去掉 `/api` 前缀转发到 `127.0.0.1:18080` Gateway；`/backend/api/**` 兼容旧上传路径；`/api/ws` 转发 WebSocket。
 
 ## Todo
 
-- 创建 GitHub 新仓库并推送本地前端代码。
-- 在服务器从 GitHub 拉取新前端仓库，执行构建并发布。
-- 用生产域名验证登录、注册、当前用户和核心页面请求。
 - 后续按业务流程继续冒烟服务浏览、发布、下单、退款/纠纷、统计、用户导入、通知和文件上传。
