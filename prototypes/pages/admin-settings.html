@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>系统配置 - 学艺坊管理后台</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 h-screen flex">
+
+    <!-- Sidebar (Duplicate) -->
+    <aside class="w-64 bg-gray-900 text-white flex-shrink-0 hidden md:flex flex-col">
+        <div class="h-16 flex items-center justify-center border-b border-gray-800">
+            <span class="text-xl font-bold tracking-wider">学艺坊 Admin</span>
+        </div>
+        <nav class="flex-1 p-4 space-y-2 overflow-y-auto">
+            <a href="admin-dashboard.html" class="flex items-center px-4 py-3 text-gray-400 hover:bg-gray-800 hover:text-white rounded-lg transition">
+                <i class="fas fa-tachometer-alt w-6 text-center mr-3"></i> 仪表板
+            </a>
+            <a href="admin-permission.html" class="flex items-center px-4 py-3 text-gray-400 hover:bg-gray-800 hover:text-white rounded-lg transition">
+                <i class="fas fa-check-circle w-6 text-center mr-3"></i> 权限审核
+                <span class="ml-auto bg-red-500 text-white text-xs px-2 py-0.5 rounded-full">15</span>
+            </a>
+            <a href="admin-service-review.html" class="flex items-center px-4 py-3 text-gray-400 hover:bg-gray-800 hover:text-white rounded-lg transition">
+                <i class="fas fa-tasks w-6 text-center mr-3"></i> 服务审核
+                <span class="ml-auto bg-red-500 text-white text-xs px-2 py-0.5 rounded-full">12</span>
+            </a>
+            <a href="admin-disputes.html" class="flex items-center px-4 py-3 text-gray-400 hover:bg-gray-800 hover:text-white rounded-lg transition">
+                <i class="fas fa-gavel w-6 text-center mr-3"></i> 纠纷处理
+                <span class="ml-auto bg-yellow-500 text-white text-xs px-2 py-0.5 rounded-full">5</span>
+            </a>
+            <a href="admin-settings.html" class="flex items-center px-4 py-3 bg-indigo-600 rounded-lg text-white">
+                <i class="fas fa-cogs w-6 text-center mr-3"></i> 系统配置
+            </a>
+        </nav>
+        <div class="p-4 border-t border-gray-800">
+            <a href="admin-login.html" class="flex items-center px-4 py-2 text-gray-400 hover:text-white transition">
+                <i class="fas fa-sign-out-alt mr-3"></i> 退出登录
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="flex-1 flex flex-col overflow-hidden">
+        <!-- Header -->
+        <header class="h-16 bg-white shadow-sm flex items-center justify-between px-6 z-10">
+            <h2 class="text-xl font-bold text-gray-800">系统配置</h2>
+            <div class="flex items-center gap-4">
+                <span class="text-sm text-gray-600">管理员: <strong>admin</strong></span>
+                <img class="h-8 w-8 rounded-full bg-gray-300" src="https://picsum.photos/seed/admin/100/100">
+            </div>
+        </header>
+
+        <!-- Content -->
+        <main class="flex-1 overflow-y-auto p-6">
+            
+            <div class="max-w-4xl mx-auto space-y-6">
+                
+                <!-- Section 1: Service Settings -->
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+                    <div class="px-6 py-4 border-b border-gray-200 bg-gray-50">
+                        <h3 class="font-bold text-gray-800">服务相关设置</h3>
+                    </div>
+                    <div class="p-6 space-y-6">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <div class="font-medium text-gray-900">审核模式</div>
+                                <div class="text-sm text-gray-500">设置服务发布后的审核流程</div>
+                            </div>
+                            <select class="border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-indigo-500 bg-white">
+                                <option value="1" selected>所有发布均需审核</option>
+                                <option value="2">仅首次发布需审核</option>
+                                <option value="3">先发布后审核 (不推荐)</option>
+                            </select>
+                        </div>
+                        <div class="flex items-center justify-between border-t border-gray-100 pt-6">
+                            <div>
+                                <div class="font-medium text-gray-900">禁止发布的关键词</div>
+                                <div class="text-sm text-gray-500">包含这些词汇的服务将自动拦截</div>
+                            </div>
+                            <div class="w-1/2">
+                                <input type="text" value="代考, 枪手, 黄赌毒" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-indigo-500">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 2: Trade Settings -->
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+                    <div class="px-6 py-4 border-b border-gray-200 bg-gray-50">
+                        <h3 class="font-bold text-gray-800">交易与资金设置</h3>
+                    </div>
+                    <div class="p-6 space-y-6">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <div class="font-medium text-gray-900">自动确认收货时间</div>
+                                <div class="text-sm text-gray-500">卖家确认后，若买家无操作，系统自动完成时间</div>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <input type="number" value="72" class="w-20 border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-indigo-500 text-center">
+                                <span class="text-sm text-gray-600">小时</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between border-t border-gray-100 pt-6">
+                            <div>
+                                <div class="font-medium text-gray-900">最低提现金额</div>
+                                <div class="text-sm text-gray-500">用户单次提现的最低限额</div>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="text-sm text-gray-600">¥</span>
+                                <input type="number" value="10.00" class="w-24 border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-indigo-500 text-center">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 3: Notification -->
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+                    <div class="px-6 py-4 border-b border-gray-200 bg-gray-50">
+                        <h3 class="font-bold text-gray-800">通知设置</h3>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <div>
+                                <div class="font-medium text-gray-900">发布全员公告</div>
+                                <div class="text-sm text-gray-500">向所有注册用户发送系统通知</div>
+                            </div>
+                        </div>
+                        <textarea class="w-full border border-gray-300 rounded-lg p-3 text-sm focus:outline-none focus:border-indigo-500 h-32 mb-4" placeholder="输入公告内容..."></textarea>
+                        <div class="text-right">
+                            <button class="bg-indigo-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-indigo-700 transition">发送公告</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Save Button -->
+                <div class="flex justify-end">
+                    <button class="bg-green-600 text-white px-8 py-3 rounded-lg font-bold hover:bg-green-700 shadow-lg transition">保存所有配置</button>
+                </div>
+
+            </div>
+
+        </main>
+    </div>
+
+</body>
+</html>

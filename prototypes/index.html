@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学艺坊 - 页面原型预览</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f3f4f6; }
+        .iframe-container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+        }
+        .iframe-container:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .iframe-header {
+            padding: 1rem 1.5rem;
+            background: #fff;
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .iframe-title {
+            font-weight: 600;
+            color: #111827;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .iframe-actions a {
+            color: #4f46e5;
+            font-size: 0.875rem;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .iframe-actions a:hover {
+            text-decoration: underline;
+        }
+        iframe {
+            width: 100%;
+            height: 800px; /* 默认高度 */
+            border: none;
+            display: block;
+        }
+    </style>
+</head>
+<body class="p-8">
+
+    <header class="max-w-7xl mx-auto mb-10 text-center">
+        <h1 class="text-4xl font-bold text-gray-900 mb-4">学艺坊 (Xueyifang) <span class="text-indigo-600">页面原型</span></h1>
+        <p class="text-lg text-gray-600">校园技能服务与交易平台 - 高保真 UI 设计预览</p>
+        <div class="mt-6 flex justify-center gap-4">
+            <span class="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium">PC 端优先 (1200px+)</span>
+            <span class="px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-medium">17 个页面</span>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto grid grid-cols-1 gap-8">
+        
+        <!-- 用户端 Section -->
+        <div class="mb-4">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 border-l-4 border-indigo-500 pl-4">用户端页面 (User)</h2>
+            
+            <!-- 1. 登录/注册页 -->
+            <div class="iframe-container">
+                <div class="iframe-header">
+                    <div class="iframe-title"><i class="fas fa-user-circle text-indigo-500"></i> 1. 登录/注册页 (Login/Register)</div>
+                    <div class="iframe-actions"><a href="pages/login.html" target="_blank">在新窗口打开 <i class="fas fa-external-link-alt ml-1"></i></a></div>
+                </div>
+                <iframe src="pages/login.html" loading="lazy"></iframe>
+            </div>
+
+            <!-- 2. 首页/服务列表 -->
+            <div class="iframe-container">
+                <div class="iframe-header">
+                    <div class="iframe-title"><i class="fas fa-home text-indigo-500"></i> 2. 首页/服务列表 (Home)</div>
+                    <div class="iframe-actions"><a href="pages/home.html" target="_blank">在新窗口打开 <i class="fas fa-external-link-alt ml-1"></i></a></div>
+                </div>
+                <iframe src="pages/home.html" loading="lazy" style="height: 900px;"></iframe>
+            </div>
+
+            <!-- 3. 服务详情页 -->
+            <div class="iframe-container">
+                <div class="iframe-header">
+                    <div class="iframe-title"><i class="fas fa-file-alt text-indigo-500"></i> 3. 服务详情页 (Service Detail)</div>
+                    <div class="iframe-actions"><a href="pages/service-detail.html" target="_blank">在新窗口打开 <i class="fas fa-external-link-alt ml-1"></i></a></div>
+                </div>
+                <iframe src="pages/service-detail.html" loading="lazy" style="height: 1000px;"></iframe>
+            </div>
+
+            <!-- 4. 发布服务页 -->
+            <div class="iframe-container">
+                <div class="iframe-header">
+                    <div class="iframe-title"><i class="fas fa-plus-circle text-indigo-500"></i> 4. 发布服务页 (Publish Service)</div>
+                    <div class="iframe-actions"><a href="pages/service-publish.html" target="_blank">在新窗口打开 <i class="fas fa-external-link-alt ml-1"></i></a></div>
+                </div>
+                <iframe src="pages/service-publish.html" loading="lazy"></iframe>
+            </div>
+
+            <!-- 5. 我的服务页 -->
+            <div class="iframe-container">
+                <div class="iframe-header">
+                    <div class="iframe-title"><i class="fas fa-box text-indigo-500"></i> 5. 我的服务页 (My Services)</div>
+                    <div class="iframe-actions"><a href="pages/my-services.html" target="_blank">在新窗口打开 <i class="fas fa-external-link-alt ml-1"></i></a></div>
+                </div>
+                <iframe src="pages/my-services.html" loading="lazy"></iframe>
+            </div>
+
+            <!-- 6. 订单列表页（买家） -->
+            <div class="iframe-container">
+                <div class="iframe-header">
+                    <div class="iframe-title"><i class="fas fa-shopping-bag text-indigo-500"></i> 6. 订单列表页-买家 (My Orders)</div>
+                    <div class="iframe-actions"><a href="pages/order-list.html" target="_blank">在新窗口打开 <i class="fas fa-external-link-alt ml-1"></i></a></div>
+                </div>
+                <iframe src="pages/order-list.html" loading="lazy"></iframe>
+            </div>
+
+            <!-- 7. 订单详情页 -->
+            <div class="iframe-container">
+                <div class="iframe-header">
+                    <div class="iframe-title"><i class="fas fa-receipt text-indigo-500"></i> 7. 订单详情页 (Order Detail)</div>
+                    <div class="iframe-actions"><a href="pages/order-detail.html" target="_blank">在新窗口打开 <i class="fas fa-external-link-alt ml-1"></i></a></div>
+                </div>
+                <iframe src="pages/order-detail.html" loading="lazy" style="height: 900px;"></iframe>
+            </div>
+
+            <!-- 8. 销售订单页（卖家） -->
+            <div class="iframe-container">
+                <div class="iframe-header">
+                    <div class="iframe-title"><i class="fas fa-store text-indigo-500"></i> 8. 销售订单页-卖家 (Sales Orders)</div>
+                    <div class="iframe-actions"><a href="pages/sales-orders.html" target="_blank">在新窗口打开 <i class="fas fa-external-link-alt ml-1"></i></a></div>
+                </div>
+                <iframe src="pages/sales-orders.html" loading="lazy"></iframe>
+            </div>
+
+            <!-- 9. 个人中心页 -->
+            <div class="iframe-container">
+                <div class="iframe-header">
+                    <div class="iframe-title"><i class="fas fa-id-card text-indigo-500"></i> 9. 个人中心页 (User Center)</div>
+                    <div class="iframe-actions"><a href="pages/user-center.html" target="_blank">在新窗口打开 <i class="fas fa-external-link-alt ml-1"></i></a></div>
+                </div>
+                <iframe src="pages/user-center.html" loading="lazy" style="height: 900px;"></iframe>
+            </div>
+
+            <!-- 10. 聊天页面 -->
+            <div class="iframe-container">
+                <div class="iframe-header">
+                    <div class="iframe-title"><i class="fas fa-comments text-indigo-500"></i> 10. 聊天页面 (Chat)</div>
+                    <div class="iframe-actions"><a href="pages/chat.html" target="_blank">在新窗口打开 <i class="fas fa-external-link-alt ml-1"></i></a></div>
+                </div>
+                <iframe src="pages/chat.html" loading="lazy"></iframe>
+            </div>
+
+            <!-- 11. 我的收藏页 -->
+            <div class="iframe-container">
+                <div class="iframe-header">
+                    <div class="iframe-title"><i class="fas fa-heart text-indigo-500"></i> 11. 我的收藏页 (Favorites)</div>
+                    <div class="iframe-actions"><a href="pages/favorites.html" target="_blank">在新窗口打开 <i class="fas fa-external-link-alt ml-1"></i></a></div>
+                </div>
+                <iframe src="pages/favorites.html" loading="lazy"></iframe>
+            </div>
+        </div>
+
+        <!-- 管理员端 Section -->
+        <div class="mb-4 mt-10">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 border-l-4 border-red-500 pl-4">管理员页面 (Admin)</h2>
+
+            <!-- 12. 管理员登录页 -->
+            <div class="iframe-container">
+                <div class="iframe-header">
+                    <div class="iframe-title"><i class="fas fa-user-shield text-red-500"></i> 12. 管理员登录页 (Admin Login)</div>
+                    <div class="iframe-actions"><a href="pages/admin-login.html" target="_blank">在新窗口打开 <i class="fas fa-external-link-alt ml-1"></i></a></div>
+                </div>
+                <iframe src="pages/admin-login.html" loading="lazy" style="height: 600px;"></iframe>
+            </div>
+
+            <!-- 13. 仪表板首页 -->
+            <div class="iframe-container">
+                <div class="iframe-header">
+                    <div class="iframe-title"><i class="fas fa-tachometer-alt text-red-500"></i> 13. 仪表板首页 (Dashboard)</div>
+                    <div class="iframe-actions"><a href="pages/admin-dashboard.html" target="_blank">在新窗口打开 <i class="fas fa-external-link-alt ml-1"></i></a></div>
+                </div>
+                <iframe src="pages/admin-dashboard.html" loading="lazy" style="height: 900px;"></iframe>
+            </div>
+
+            <!-- 14. 权限审核列表 -->
+            <div class="iframe-container">
+                <div class="iframe-header">
+                    <div class="iframe-title"><i class="fas fa-check-circle text-red-500"></i> 14. 权限审核列表 (Permission Review)</div>
+                    <div class="iframe-actions"><a href="pages/admin-permission.html" target="_blank">在新窗口打开 <i class="fas fa-external-link-alt ml-1"></i></a></div>
+                </div>
+                <iframe src="pages/admin-permission.html" loading="lazy"></iframe>
+            </div>
+
+            <!-- 15. 服务审核列表 -->
+            <div class="iframe-container">
+                <div class="iframe-header">
+                    <div class="iframe-title"><i class="fas fa-tasks text-red-500"></i> 15. 服务审核列表 (Service Review)</div>
+                    <div class="iframe-actions"><a href="pages/admin-service-review.html" target="_blank">在新窗口打开 <i class="fas fa-external-link-alt ml-1"></i></a></div>
+                </div>
+                <iframe src="pages/admin-service-review.html" loading="lazy"></iframe>
+            </div>
+
+            <!-- 16. 纠纷处理列表 -->
+            <div class="iframe-container">
+                <div class="iframe-header">
+                    <div class="iframe-title"><i class="fas fa-gavel text-red-500"></i> 16. 纠纷处理列表 (Disputes)</div>
+                    <div class="iframe-actions"><a href="pages/admin-disputes.html" target="_blank">在新窗口打开 <i class="fas fa-external-link-alt ml-1"></i></a></div>
+                </div>
+                <iframe src="pages/admin-disputes.html" loading="lazy"></iframe>
+            </div>
+
+            <!-- 17. 系统配置页 -->
+            <div class="iframe-container">
+                <div class="iframe-header">
+                    <div class="iframe-title"><i class="fas fa-cogs text-red-500"></i> 17. 系统配置页 (Settings)</div>
+                    <div class="iframe-actions"><a href="pages/admin-settings.html" target="_blank">在新窗口打开 <i class="fas fa-external-link-alt ml-1"></i></a></div>
+                </div>
+                <iframe src="pages/admin-settings.html" loading="lazy"></iframe>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="text-center py-10 text-gray-500 text-sm">
+        <p>&copy; 2025 学艺坊 (Xueyifang) Prototype. Designed for Review.</p>
+    </footer>
+
+</body>
+</html>

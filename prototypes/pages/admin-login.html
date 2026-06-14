@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>管理员登录 - 学艺坊后台</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-900 h-screen flex items-center justify-center">
+
+    <div class="bg-white rounded-lg shadow-2xl w-full max-w-md p-8">
+        <div class="text-center mb-8">
+            <div class="text-4xl text-indigo-600 mb-2"><i class="fas fa-shield-alt"></i></div>
+            <h1 class="text-2xl font-bold text-gray-800">学艺坊管理后台</h1>
+            <p class="text-gray-500 text-sm">Admin Management System</p>
+        </div>
+
+        <form action="admin-dashboard.html">
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2">账号</label>
+                <div class="relative">
+                    <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-gray-400">
+                        <i class="fas fa-user"></i>
+                    </span>
+                    <input class="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500" type="text" placeholder="管理员账号" value="admin">
+                </div>
+            </div>
+            <div class="mb-6">
+                <label class="block text-gray-700 text-sm font-bold mb-2">密码</label>
+                <div class="relative">
+                    <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-gray-400">
+                        <i class="fas fa-lock"></i>
+                    </span>
+                    <input class="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500" type="password" placeholder="请输入密码" value="123456">
+                </div>
+            </div>
+            <button class="w-full bg-indigo-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-indigo-700 transition duration-300" type="button" onclick="window.location.href='admin-dashboard.html'">
+                登 录
+            </button>
+        </form>
+        
+        <div class="mt-6 text-center">
+            <a href="../index.html" class="text-sm text-gray-400 hover:text-indigo-600">返回首页</a>
+        </div>
+    </div>
+
+</body>
+</html>

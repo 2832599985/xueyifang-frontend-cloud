@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>服务审核 - 学艺坊管理后台</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 h-screen flex">
+
+    <!-- Sidebar (Duplicate) -->
+    <aside class="w-64 bg-gray-900 text-white flex-shrink-0 hidden md:flex flex-col">
+        <div class="h-16 flex items-center justify-center border-b border-gray-800">
+            <span class="text-xl font-bold tracking-wider">学艺坊 Admin</span>
+        </div>
+        <nav class="flex-1 p-4 space-y-2 overflow-y-auto">
+            <a href="admin-dashboard.html" class="flex items-center px-4 py-3 text-gray-400 hover:bg-gray-800 hover:text-white rounded-lg transition">
+                <i class="fas fa-tachometer-alt w-6 text-center mr-3"></i> 仪表板
+            </a>
+            <a href="admin-permission.html" class="flex items-center px-4 py-3 text-gray-400 hover:bg-gray-800 hover:text-white rounded-lg transition">
+                <i class="fas fa-check-circle w-6 text-center mr-3"></i> 权限审核
+                <span class="ml-auto bg-red-500 text-white text-xs px-2 py-0.5 rounded-full">15</span>
+            </a>
+            <a href="admin-service-review.html" class="flex items-center px-4 py-3 bg-indigo-600 rounded-lg text-white">
+                <i class="fas fa-tasks w-6 text-center mr-3"></i> 服务审核
+                <span class="ml-auto bg-red-500 text-white text-xs px-2 py-0.5 rounded-full">12</span>
+            </a>
+            <a href="admin-disputes.html" class="flex items-center px-4 py-3 text-gray-400 hover:bg-gray-800 hover:text-white rounded-lg transition">
+                <i class="fas fa-gavel w-6 text-center mr-3"></i> 纠纷处理
+                <span class="ml-auto bg-yellow-500 text-white text-xs px-2 py-0.5 rounded-full">5</span>
+            </a>
+            <a href="admin-settings.html" class="flex items-center px-4 py-3 text-gray-400 hover:bg-gray-800 hover:text-white rounded-lg transition">
+                <i class="fas fa-cogs w-6 text-center mr-3"></i> 系统配置
+            </a>
+        </nav>
+        <div class="p-4 border-t border-gray-800">
+            <a href="admin-login.html" class="flex items-center px-4 py-2 text-gray-400 hover:text-white transition">
+                <i class="fas fa-sign-out-alt mr-3"></i> 退出登录
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="flex-1 flex flex-col overflow-hidden">
+        <!-- Header -->
+        <header class="h-16 bg-white shadow-sm flex items-center justify-between px-6 z-10">
+            <h2 class="text-xl font-bold text-gray-800">服务审核</h2>
+            <div class="flex items-center gap-4">
+                <span class="text-sm text-gray-600">管理员: <strong>admin</strong></span>
+                <img class="h-8 w-8 rounded-full bg-gray-300" src="https://picsum.photos/seed/admin/100/100">
+            </div>
+        </header>
+
+        <!-- Content -->
+        <main class="flex-1 overflow-y-auto p-6">
+            
+            <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+                <!-- Filter -->
+                <div class="p-4 border-b border-gray-200 flex gap-4">
+                    <input type="text" placeholder="搜索服务标题/卖家..." class="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-indigo-500 w-64">
+                    <select class="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-indigo-500 bg-white">
+                        <option value="pending">待审核 (12)</option>
+                        <option value="approved">已上架</option>
+                        <option value="rejected">已驳回</option>
+                    </select>
+                    <button class="bg-indigo-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-indigo-700">搜索</button>
+                </div>
+
+                <!-- List -->
+                <div class="divide-y divide-gray-200">
+                    
+                    <!-- Item 1 -->
+                    <div class="p-6 hover:bg-gray-50 transition">
+                        <div class="flex justify-between items-start">
+                            <div class="flex gap-4">
+                                <img src="https://picsum.photos/seed/code/100/100" class="w-24 h-24 object-cover rounded-lg border border-gray-200">
+                                <div>
+                                    <h3 class="text-lg font-bold text-gray-900 mb-1">Java/Python 毕设辅导与代码调试</h3>
+                                    <div class="text-sm text-gray-500 mb-2">
+                                        <span class="bg-gray-100 px-2 py-0.5 rounded text-xs mr-2">编程开发</span>
+                                        <span class="text-indigo-600">¥ 99.99</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600 mb-2 line-clamp-2 max-w-2xl">提供专业的Java编程辅导，包括基础语法、Spring Boot框架、Vue前端对接等内容...</p>
+                                    <div class="text-xs text-gray-400">
+                                        卖家：张三 (20240001) | 提交时间：2025-10-27 10:30
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <button class="px-4 py-2 bg-green-600 text-white text-sm font-medium rounded hover:bg-green-700 transition"><i class="fas fa-check mr-1"></i> 通过</button>
+                                <button class="px-4 py-2 bg-red-600 text-white text-sm font-medium rounded hover:bg-red-700 transition"><i class="fas fa-times mr-1"></i> 驳回</button>
+                                <button class="px-4 py-2 border border-gray-300 text-gray-600 text-sm font-medium rounded hover:bg-gray-100 transition">详情</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="p-6 hover:bg-gray-50 transition">
+                        <div class="flex justify-between items-start">
+                            <div class="flex gap-4">
+                                <img src="https://picsum.photos/seed/design/100/100" class="w-24 h-24 object-cover rounded-lg border border-gray-200">
+                                <div>
+                                    <h3 class="text-lg font-bold text-gray-900 mb-1">高质量海报/Logo/UI设计</h3>
+                                    <div class="text-sm text-gray-500 mb-2">
+                                        <span class="bg-gray-100 px-2 py-0.5 rounded text-xs mr-2">平面设计</span>
+                                        <span class="text-indigo-600">¥ 150.00</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600 mb-2 line-clamp-2 max-w-2xl">承接各类平面设计需求，Logo、海报、宣传单，提供源文件...</p>
+                                    <div class="text-xs text-gray-400">
+                                        卖家：李四 (20240002) | 提交时间：2025-10-27 09:45
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <button class="px-4 py-2 bg-green-600 text-white text-sm font-medium rounded hover:bg-green-700 transition"><i class="fas fa-check mr-1"></i> 通过</button>
+                                <button class="px-4 py-2 bg-red-600 text-white text-sm font-medium rounded hover:bg-red-700 transition"><i class="fas fa-times mr-1"></i> 驳回</button>
+                                <button class="px-4 py-2 border border-gray-300 text-gray-600 text-sm font-medium rounded hover:bg-gray-100 transition">详情</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Pagination (Duplicate) -->
+                <div class="bg-white px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6">
+                    <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
+                        <div>
+                            <p class="text-sm text-gray-700">
+                                显示 <span class="font-medium">1</span> 到 <span class="font-medium">10</span> 条，共 <span class="font-medium">12</span> 条
+                            </p>
+                        </div>
+                        <div>
+                            <nav class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">
+                                <a href="#" class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                                    <i class="fas fa-chevron-left"></i>
+                                </a>
+                                <a href="#" class="z-10 bg-indigo-50 border-indigo-500 text-indigo-600 relative inline-flex items-center px-4 py-2 border text-sm font-medium">1</a>
+                                <a href="#" class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium">2</a>
+                                <a href="#" class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                                    <i class="fas fa-chevron-right"></i>
+                                </a>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+</body>
+</html>

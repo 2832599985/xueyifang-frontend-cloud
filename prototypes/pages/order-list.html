@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>我的订单 - 学艺坊</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+
+    <!-- Navbar (Duplicate) -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="home.html" class="flex-shrink-0 flex items-center text-indigo-600">
+                        <i class="fas fa-graduation-cap text-3xl mr-2"></i>
+                        <span class="font-bold text-xl">学艺坊</span>
+                    </a>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="flex items-center gap-3 ml-2 text-gray-500">
+                        <div class="relative group">
+                            <button class="flex items-center focus:outline-none">
+                                <img class="h-8 w-8 rounded-full object-cover border border-gray-200" src="https://picsum.photos/seed/user1/100/100" alt="User">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="flex flex-col md:flex-row gap-8">
+            
+            <!-- Sidebar (Duplicate) -->
+            <aside class="w-full md:w-64 flex-shrink-0">
+                <div class="bg-white rounded-xl shadow-sm p-4">
+                    <div class="text-center py-4 border-b border-gray-100 mb-4">
+                        <img class="h-20 w-20 rounded-full mx-auto mb-2 object-cover" src="https://picsum.photos/seed/user1/100/100">
+                        <h3 class="font-bold text-gray-900">张同学</h3>
+                    </div>
+                    <nav class="space-y-1">
+                        <a href="user-center.html" class="flex items-center px-4 py-2 text-gray-600 hover:bg-gray-50 hover:text-indigo-600 rounded-lg transition">
+                            <i class="fas fa-user w-6 text-center mr-2"></i> 个人资料
+                        </a>
+                        <a href="my-services.html" class="flex items-center px-4 py-2 text-gray-600 hover:bg-gray-50 hover:text-indigo-600 rounded-lg transition">
+                            <i class="fas fa-box w-6 text-center mr-2"></i> 我的服务
+                        </a>
+                        <a href="order-list.html" class="flex items-center px-4 py-2 bg-indigo-50 text-indigo-600 font-medium rounded-lg transition">
+                            <i class="fas fa-shopping-bag w-6 text-center mr-2"></i> 购买订单
+                        </a>
+                        <a href="sales-orders.html" class="flex items-center px-4 py-2 text-gray-600 hover:bg-gray-50 hover:text-indigo-600 rounded-lg transition">
+                            <i class="fas fa-store w-6 text-center mr-2"></i> 销售订单
+                        </a>
+                    </nav>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <div class="flex-1">
+                <div class="bg-white rounded-xl shadow-sm p-6 min-h-[600px]">
+                    <h1 class="text-2xl font-bold text-gray-900 mb-6">我的购买订单</h1>
+
+                    <!-- Tabs -->
+                    <div class="border-b border-gray-200 mb-6">
+                        <nav class="-mb-px flex space-x-8 overflow-x-auto">
+                            <a href="#" class="border-indigo-500 text-indigo-600 py-4 px-1 border-b-2 font-medium text-sm whitespace-nowrap">全部</a>
+                            <a href="#" class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 py-4 px-1 border-b-2 font-medium text-sm whitespace-nowrap">待支付 (1)</a>
+                            <a href="#" class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 py-4 px-1 border-b-2 font-medium text-sm whitespace-nowrap">交易中 (1)</a>
+                            <a href="#" class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 py-4 px-1 border-b-2 font-medium text-sm whitespace-nowrap">已完成 (2)</a>
+                            <a href="#" class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 py-4 px-1 border-b-2 font-medium text-sm whitespace-nowrap">已取消 (0)</a>
+                        </nav>
+                    </div>
+
+                    <!-- Order List -->
+                    <div class="space-y-6">
+                        
+                        <!-- Order 1: Unpaid -->
+                        <div class="border border-gray-200 rounded-lg overflow-hidden hover:shadow-sm transition">
+                            <div class="bg-gray-50 px-4 py-3 border-b border-gray-200 flex justify-between items-center text-sm text-gray-600">
+                                <div class="flex gap-4">
+                                    <span>2025-10-27 16:00:00</span>
+                                    <span>订单号: 2025102700000001</span>
+                                </div>
+                                <span class="text-red-600 font-medium">待支付</span>
+                            </div>
+                            <div class="p-4 flex flex-col sm:flex-row gap-4 items-center">
+                                <div class="flex-1 flex gap-4 w-full">
+                                    <img src="https://picsum.photos/seed/code/100/100" class="w-20 h-20 object-cover rounded-md border border-gray-200">
+                                    <div>
+                                        <a href="service-detail.html" class="font-medium text-gray-900 hover:text-indigo-600 line-clamp-1">Java/Python 毕设辅导与代码调试</a>
+                                        <p class="text-xs text-gray-500 mt-1">卖家: 计算机系-张学长</p>
+                                        <p class="text-sm font-bold text-gray-800 mt-2">¥ 99.99</p>
+                                    </div>
+                                </div>
+                                <div class="flex flex-row sm:flex-col gap-2 w-full sm:w-auto">
+                                    <button class="flex-1 px-4 py-2 bg-red-600 text-white text-sm font-medium rounded hover:bg-red-700 transition">立即支付</button>
+                                    <a href="order-detail.html" class="flex-1 px-4 py-2 border border-gray-300 text-gray-600 text-sm font-medium rounded hover:bg-gray-50 text-center">查看详情</a>
+                                    <button class="flex-1 text-xs text-gray-400 hover:text-gray-600">取消订单</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Order 2: In Progress -->
+                        <div class="border border-gray-200 rounded-lg overflow-hidden hover:shadow-sm transition">
+                            <div class="bg-gray-50 px-4 py-3 border-b border-gray-200 flex justify-between items-center text-sm text-gray-600">
+                                <div class="flex gap-4">
+                                    <span>2025-10-26 10:30:00</span>
+                                    <span>订单号: 2025102600000002</span>
+                                </div>
+                                <span class="text-yellow-600 font-medium">交易中 (已支付)</span>
+                            </div>
+                            <div class="p-4 flex flex-col sm:flex-row gap-4 items-center">
+                                <div class="flex-1 flex gap-4 w-full">
+                                    <img src="https://picsum.photos/seed/design/100/100" class="w-20 h-20 object-cover rounded-md border border-gray-200">
+                                    <div>
+                                        <a href="service-detail.html" class="font-medium text-gray-900 hover:text-indigo-600 line-clamp-1">高质量海报/Logo/UI设计</a>
+                                        <p class="text-xs text-gray-500 mt-1">卖家: 设计学院-李同学</p>
+                                        <p class="text-sm font-bold text-gray-800 mt-2">¥ 150.00</p>
+                                    </div>
+                                </div>
+                                <div class="flex flex-row sm:flex-col gap-2 w-full sm:w-auto">
+                                    <button class="flex-1 px-4 py-2 bg-indigo-600 text-white text-sm font-medium rounded hover:bg-indigo-700 transition">确认收货</button>
+                                    <a href="chat.html" class="flex-1 px-4 py-2 border border-gray-300 text-gray-600 text-sm font-medium rounded hover:bg-gray-50 text-center">联系卖家</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Order 3: Completed -->
+                        <div class="border border-gray-200 rounded-lg overflow-hidden hover:shadow-sm transition">
+                            <div class="bg-gray-50 px-4 py-3 border-b border-gray-200 flex justify-between items-center text-sm text-gray-600">
+                                <div class="flex gap-4">
+                                    <span>2025-10-25 14:20:00</span>
+                                    <span>订单号: 2025102500000003</span>
+                                </div>
+                                <span class="text-green-600 font-medium">已完成</span>
+                            </div>
+                            <div class="p-4 flex flex-col sm:flex-row gap-4 items-center">
+                                <div class="flex-1 flex gap-4 w-full">
+                                    <img src="https://picsum.photos/seed/video/100/100" class="w-20 h-20 object-cover rounded-md border border-gray-200">
+                                    <div>
+                                        <a href="service-detail.html" class="font-medium text-gray-900 hover:text-indigo-600 line-clamp-1">短视频剪辑/特效/字幕添加</a>
+                                        <p class="text-xs text-gray-500 mt-1">卖家: 传媒-王剪辑</p>
+                                        <p class="text-sm font-bold text-gray-800 mt-2">¥ 50.00</p>
+                                    </div>
+                                </div>
+                                <div class="flex flex-row sm:flex-col gap-2 w-full sm:w-auto">
+                                    <button class="flex-1 px-4 py-2 border border-gray-300 text-gray-600 text-sm font-medium rounded hover:bg-gray-50 transition">评价</button>
+                                    <button class="flex-1 px-4 py-2 border border-gray-300 text-gray-600 text-sm font-medium rounded hover:bg-gray-50 transition">再次购买</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="mt-8 flex justify-center">
+                        <nav class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px">
+                            <a href="#" class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                                <i class="fas fa-chevron-left"></i>
+                            </a>
+                            <a href="#" class="z-10 bg-indigo-50 border-indigo-500 text-indigo-600 relative inline-flex items-center px-4 py-2 border text-sm font-medium">1</a>
+                            <a href="#" class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium">2</a>
+                            <a href="#" class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                                <i class="fas fa-chevron-right"></i>
+                            </a>
+                        </nav>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

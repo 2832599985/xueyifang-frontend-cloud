@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>首页 - 学艺坊</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="home.html" class="flex-shrink-0 flex items-center text-indigo-600">
+                        <i class="fas fa-graduation-cap text-3xl mr-2"></i>
+                        <span class="font-bold text-xl">学艺坊</span>
+                    </a>
+                    <div class="hidden md:ml-6 md:flex md:space-x-8">
+                        <a href="home.html" class="border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">首页</a>
+                        <a href="#" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">悬赏大厅</a>
+                        <a href="#" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">社区论坛</a>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="relative hidden md:block">
+                        <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-gray-400">
+                            <i class="fas fa-search"></i>
+                        </span>
+                        <input class="w-64 pl-10 pr-4 py-2 border border-gray-300 rounded-full text-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500" type="text" placeholder="搜索服务、技能...">
+                    </div>
+                    
+                    <a href="service-publish.html" class="text-white bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+                        <i class="fas fa-plus mr-1"></i> 发布服务
+                    </a>
+
+                    <div class="flex items-center gap-3 ml-2 text-gray-500">
+                        <a href="favorites.html" class="hover:text-indigo-600 relative">
+                            <i class="fas fa-heart text-xl"></i>
+                        </a>
+                        <a href="chat.html" class="hover:text-indigo-600 relative">
+                            <i class="fas fa-comment-dots text-xl"></i>
+                            <span class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">2</span>
+                        </a>
+                        <div class="relative group">
+                            <button class="flex items-center focus:outline-none">
+                                <img class="h-8 w-8 rounded-full object-cover border border-gray-200" src="https://picsum.photos/seed/user1/100/100" alt="User">
+                            </button>
+                            <!-- Dropdown -->
+                            <div class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 hidden group-hover:block ring-1 ring-black ring-opacity-5">
+                                <a href="user-center.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">个人中心</a>
+                                <a href="my-services.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">我的服务</a>
+                                <a href="order-list.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">我的订单</a>
+                                <div class="border-t border-gray-100 my-1"></div>
+                                <a href="login.html" class="block px-4 py-2 text-sm text-red-600 hover:bg-gray-100">退出登录</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+        <!-- Banner/Filters -->
+        <div class="bg-white rounded-xl shadow-sm p-6 mb-8">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
+                <h2 class="text-2xl font-bold text-gray-800">发现校园技能</h2>
+                <div class="flex items-center gap-2">
+                    <span class="text-gray-500 text-sm">排序:</span>
+                    <select class="border-gray-300 border rounded-md text-sm py-1 pl-2 pr-8 focus:ring-indigo-500 focus:border-indigo-500">
+                        <option>综合排序</option>
+                        <option>最新发布</option>
+                        <option>价格从低到高</option>
+                        <option>销量优先</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- Categories -->
+            <div class="flex flex-wrap gap-2">
+                <button class="px-4 py-2 bg-indigo-600 text-white rounded-full text-sm font-medium">全部</button>
+                <button class="px-4 py-2 bg-gray-100 text-gray-600 hover:bg-gray-200 rounded-full text-sm transition">编程开发</button>
+                <button class="px-4 py-2 bg-gray-100 text-gray-600 hover:bg-gray-200 rounded-full text-sm transition">平面设计</button>
+                <button class="px-4 py-2 bg-gray-100 text-gray-600 hover:bg-gray-200 rounded-full text-sm transition">视频剪辑</button>
+                <button class="px-4 py-2 bg-gray-100 text-gray-600 hover:bg-gray-200 rounded-full text-sm transition">语言翻译</button>
+                <button class="px-4 py-2 bg-gray-100 text-gray-600 hover:bg-gray-200 rounded-full text-sm transition">考研辅导</button>
+                <button class="px-4 py-2 bg-gray-100 text-gray-600 hover:bg-gray-200 rounded-full text-sm transition">PPT制作</button>
+                <button class="px-4 py-2 bg-gray-100 text-gray-600 hover:bg-gray-200 rounded-full text-sm transition">跑腿代办</button>
+            </div>
+        </div>
+
+        <!-- Service Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            
+            <!-- Card 1 -->
+            <div class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition group">
+                <a href="service-detail.html" class="block relative h-48 bg-gray-200 overflow-hidden">
+                    <img class="w-full h-full object-cover group-hover:scale-105 transition duration-500" src="https://picsum.photos/seed/code/400/300" alt="Service">
+                    <span class="absolute top-2 left-2 bg-blue-500 text-white text-xs px-2 py-1 rounded">编程开发</span>
+                </a>
+                <div class="p-4">
+                    <a href="service-detail.html" class="block">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-1 truncate group-hover:text-indigo-600">Java/Python 毕设辅导与代码调试</h3>
+                    </a>
+                    <div class="flex items-center text-sm text-gray-500 mb-3">
+                        <img class="h-5 w-5 rounded-full mr-2" src="https://picsum.photos/seed/user2/50/50">
+                        <span class="truncate">计算机系-张学长</span>
+                    </div>
+                    <div class="flex items-end justify-between">
+                        <div class="text-red-600 font-bold text-lg">¥ 99.00</div>
+                        <div class="text-gray-400 text-xs mb-1">已售 128</div>
+                    </div>
+                </div>
+                <div class="px-4 py-3 border-t border-gray-100 flex justify-between items-center">
+                    <div class="flex text-yellow-400 text-xs">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        <span class="text-gray-400 ml-1">4.8</span>
+                    </div>
+                    <button class="text-gray-400 hover:text-red-500 transition"><i class="far fa-heart"></i></button>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition group">
+                <a href="service-detail.html" class="block relative h-48 bg-gray-200 overflow-hidden">
+                    <img class="w-full h-full object-cover group-hover:scale-105 transition duration-500" src="https://picsum.photos/seed/design/400/300" alt="Service">
+                    <span class="absolute top-2 left-2 bg-purple-500 text-white text-xs px-2 py-1 rounded">平面设计</span>
+                </a>
+                <div class="p-4">
+                    <a href="service-detail.html" class="block">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-1 truncate group-hover:text-indigo-600">高质量海报/Logo/UI设计</h3>
+                    </a>
+                    <div class="flex items-center text-sm text-gray-500 mb-3">
+                        <img class="h-5 w-5 rounded-full mr-2" src="https://picsum.photos/seed/user3/50/50">
+                        <span class="truncate">设计学院-李同学</span>
+                    </div>
+                    <div class="flex items-end justify-between">
+                        <div class="text-red-600 font-bold text-lg">¥ 150.00</div>
+                        <div class="text-gray-400 text-xs mb-1">已售 45</div>
+                    </div>
+                </div>
+                <div class="px-4 py-3 border-t border-gray-100 flex justify-between items-center">
+                    <div class="flex text-yellow-400 text-xs">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <span class="text-gray-400 ml-1">5.0</span>
+                    </div>
+                    <button class="text-gray-400 hover:text-red-500 transition"><i class="far fa-heart"></i></button>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition group">
+                <a href="service-detail.html" class="block relative h-48 bg-gray-200 overflow-hidden">
+                    <img class="w-full h-full object-cover group-hover:scale-105 transition duration-500" src="https://picsum.photos/seed/video/400/300" alt="Service">
+                    <span class="absolute top-2 left-2 bg-pink-500 text-white text-xs px-2 py-1 rounded">视频剪辑</span>
+                </a>
+                <div class="p-4">
+                    <a href="service-detail.html" class="block">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-1 truncate group-hover:text-indigo-600">短视频剪辑/特效/字幕添加</h3>
+                    </a>
+                    <div class="flex items-center text-sm text-gray-500 mb-3">
+                        <img class="h-5 w-5 rounded-full mr-2" src="https://picsum.photos/seed/user4/50/50">
+                        <span class="truncate">传媒-王剪辑</span>
+                    </div>
+                    <div class="flex items-end justify-between">
+                        <div class="text-red-600 font-bold text-lg">¥ 50.00</div>
+                        <div class="text-gray-400 text-xs mb-1">已售 89</div>
+                    </div>
+                </div>
+                <div class="px-4 py-3 border-t border-gray-100 flex justify-between items-center">
+                    <div class="flex text-yellow-400 text-xs">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                        <span class="text-gray-400 ml-1">4.0</span>
+                    </div>
+                    <button class="text-gray-400 hover:text-red-500 transition"><i class="far fa-heart"></i></button>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition group">
+                <a href="service-detail.html" class="block relative h-48 bg-gray-200 overflow-hidden">
+                    <img class="w-full h-full object-cover group-hover:scale-105 transition duration-500" src="https://picsum.photos/seed/ppt/400/300" alt="Service">
+                    <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-1 rounded">PPT制作</span>
+                </a>
+                <div class="p-4">
+                    <a href="service-detail.html" class="block">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-1 truncate group-hover:text-indigo-600">专业PPT美化/定制/动画设计</h3>
+                    </a>
+                    <div class="flex items-center text-sm text-gray-500 mb-3">
+                        <img class="h-5 w-5 rounded-full mr-2" src="https://picsum.photos/seed/user5/50/50">
+                        <span class="truncate">文学院-赵同学</span>
+                    </div>
+                    <div class="flex items-end justify-between">
+                        <div class="text-red-600 font-bold text-lg">¥ 30.00</div>
+                        <div class="text-gray-400 text-xs mb-1">已售 210</div>
+                    </div>
+                </div>
+                <div class="px-4 py-3 border-t border-gray-100 flex justify-between items-center">
+                    <div class="flex text-yellow-400 text-xs">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        <span class="text-gray-400 ml-1">4.7</span>
+                    </div>
+                    <button class="text-gray-400 hover:text-red-500 transition"><i class="far fa-heart"></i></button>
+                </div>
+            </div>
+
+            <!-- Repeat cards for layout -->
+            <div class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition group">
+                <a href="service-detail.html" class="block relative h-48 bg-gray-200 overflow-hidden">
+                    <img class="w-full h-full object-cover group-hover:scale-105 transition duration-500" src="https://picsum.photos/seed/english/400/300" alt="Service">
+                    <span class="absolute top-2 left-2 bg-orange-500 text-white text-xs px-2 py-1 rounded">语言翻译</span>
+                </a>
+                <div class="p-4">
+                    <a href="service-detail.html" class="block">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-1 truncate group-hover:text-indigo-600">英语六级/雅思托福作文批改</h3>
+                    </a>
+                    <div class="flex items-center text-sm text-gray-500 mb-3">
+                        <img class="h-5 w-5 rounded-full mr-2" src="https://picsum.photos/seed/user6/50/50">
+                        <span class="truncate">外语系-陈学姐</span>
+                    </div>
+                    <div class="flex items-end justify-between">
+                        <div class="text-red-600 font-bold text-lg">¥ 20.00</div>
+                        <div class="text-gray-400 text-xs mb-1">已售 56</div>
+                    </div>
+                </div>
+                <div class="px-4 py-3 border-t border-gray-100 flex justify-between items-center">
+                    <div class="flex text-yellow-400 text-xs">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <span class="text-gray-400 ml-1">4.9</span>
+                    </div>
+                    <button class="text-red-500 hover:text-red-600 transition"><i class="fas fa-heart"></i></button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Pagination -->
+        <div class="mt-10 flex justify-center">
+            <nav class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">
+                <a href="#" class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                    <span class="sr-only">Previous</span>
+                    <i class="fas fa-chevron-left"></i>
+                </a>
+                <a href="#" aria-current="page" class="z-10 bg-indigo-50 border-indigo-500 text-indigo-600 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
+                    1
+                </a>
+                <a href="#" class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
+                    2
+                </a>
+                <a href="#" class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
+                    3
+                </a>
+                <a href="#" class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                    <span class="sr-only">Next</span>
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+            </nav>
+        </div>
+
+    </main>
+
+    <footer class="bg-white border-t border-gray-200 mt-12 py-8">
+        <div class="max-w-7xl mx-auto px-4 text-center text-gray-500 text-sm">
+            <p>&copy; 2025 学艺坊 (Xueyifang) 版权所有</p>
+        </div>
+    </footer>
+
+</body>
+</html>

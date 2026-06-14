@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>登录/注册 - 学艺坊</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 h-screen flex items-center justify-center">
+
+    <div class="bg-white rounded-2xl shadow-xl overflow-hidden max-w-4xl w-full flex flex-col md:flex-row">
+        <!-- Left Side: Branding -->
+        <div class="md:w-1/2 bg-indigo-600 p-10 flex flex-col justify-center items-center text-white">
+            <div class="text-6xl mb-4"><i class="fas fa-graduation-cap"></i></div>
+            <h1 class="text-3xl font-bold mb-2">学艺坊</h1>
+            <p class="text-indigo-200 text-center">校园技能服务与交易平台</p>
+            <p class="mt-8 text-sm text-indigo-300 text-center">连接校园才华，变现知识技能<br>安全、便捷、专业的校园服务市场</p>
+        </div>
+
+        <!-- Right Side: Form -->
+        <div class="md:w-1/2 p-10">
+            <!-- Tabs -->
+            <div class="flex border-b border-gray-200 mb-6" id="auth-tabs">
+                <button class="w-1/2 py-3 text-indigo-600 border-b-2 border-indigo-600 font-medium focus:outline-none" onclick="switchTab('login')">登录</button>
+                <button class="w-1/2 py-3 text-gray-500 hover:text-indigo-600 font-medium focus:outline-none" onclick="switchTab('register')">注册</button>
+            </div>
+
+            <!-- Login Form -->
+            <div id="login-form" class="block">
+                <form action="home.html">
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="login-id">学号</label>
+                        <div class="relative">
+                            <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-gray-400">
+                                <i class="fas fa-id-card"></i>
+                            </span>
+                            <input class="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500" id="login-id" type="text" placeholder="请输入学号" value="20240001">
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="login-password">密码</label>
+                        <div class="relative">
+                            <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-gray-400">
+                                <i class="fas fa-lock"></i>
+                            </span>
+                            <input class="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500" id="login-password" type="password" placeholder="请输入密码">
+                        </div>
+                        <div class="flex justify-between items-center mt-2">
+                            <label class="inline-flex items-center">
+                                <input type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600">
+                                <span class="ml-2 text-sm text-gray-600">记住我</span>
+                            </label>
+                            <a href="#" class="text-sm text-indigo-600 hover:text-indigo-800">忘记密码?</a>
+                        </div>
+                    </div>
+                    <button class="w-full bg-indigo-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-indigo-700 transition duration-300" type="button" onclick="window.location.href='home.html'">
+                        登 录
+                    </button>
+                </form>
+            </div>
+
+            <!-- Register Form -->
+            <div id="register-form" class="hidden">
+                <form>
+                    <div class="grid grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <label class="block text-gray-700 text-xs font-bold mb-1">学号 *</label>
+                            <input class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500" type="text" placeholder="2024...">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 text-xs font-bold mb-1">姓名 *</label>
+                            <input class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500" type="text" placeholder="真实姓名">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <label class="block text-gray-700 text-xs font-bold mb-1">专业 *</label>
+                            <select class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 bg-white">
+                                <option>计算机科学与技术</option>
+                                <option>软件工程</option>
+                                <option>视觉传达设计</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 text-xs font-bold mb-1">年级 *</label>
+                            <select class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 bg-white">
+                                <option>大一</option>
+                                <option>大二</option>
+                                <option>大三</option>
+                                <option>大四</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-xs font-bold mb-1">手机号 *</label>
+                        <input class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500" type="tel" placeholder="用于接收通知">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-xs font-bold mb-1">设置密码 *</label>
+                        <input class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500" type="password" placeholder="8-16位，含数字字母">
+                    </div>
+                    <button class="w-full bg-green-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-green-700 transition duration-300" type="button" onclick="alert('注册申请已提交，请等待审核')">
+                        立即注册
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function switchTab(tab) {
+            const loginForm = document.getElementById('login-form');
+            const registerForm = document.getElementById('register-form');
+            const btns = document.getElementById('auth-tabs').getElementsByTagName('button');
+
+            if (tab === 'login') {
+                loginForm.classList.remove('hidden');
+                loginForm.classList.add('block');
+                registerForm.classList.remove('block');
+                registerForm.classList.add('hidden');
+                btns[0].className = "w-1/2 py-3 text-indigo-600 border-b-2 border-indigo-600 font-medium focus:outline-none";
+                btns[1].className = "w-1/2 py-3 text-gray-500 hover:text-indigo-600 font-medium focus:outline-none";
+            } else {
+                loginForm.classList.remove('block');
+                loginForm.classList.add('hidden');
+                registerForm.classList.remove('hidden');
+                registerForm.classList.add('block');
+                btns[0].className = "w-1/2 py-3 text-gray-500 hover:text-indigo-600 font-medium focus:outline-none";
+                btns[1].className = "w-1/2 py-3 text-indigo-600 border-b-2 border-indigo-600 font-medium focus:outline-none";
+            }
+        }
+    </script>
+</body>
+</html>
